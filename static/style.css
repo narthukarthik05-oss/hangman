@@ -1,0 +1,150 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body {
+    background: radial-gradient(circle at top, #1e1e3f, #0a0a14);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+/* GAME CONTAINER */
+.game {
+    background: linear-gradient(145deg, #24244d, #181833);
+    width: 380px;
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow:
+        0 0 25px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
+    animation: cardFloat 5s ease-in-out infinite;
+}
+
+/* FLOATING CARD */
+@keyframes cardFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* TITLE */
+h1 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #00f7ff;
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.6);
+}
+
+/* WORD DISPLAY */
+.word {
+    font-size: 2.4em;
+    letter-spacing: 14px;
+    margin: 25px 0;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+}
+
+/* WIN EFFECT */
+.word.win {
+    color: #00ff9c;
+    text-shadow:
+        0 0 8px #00ff9c,
+        0 0 25px #00ff9c;
+    animation: winPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes winPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* LOSE EFFECT */
+.word.lose {
+    color: #ff4d4d;
+    text-shadow: 0 0 15px #ff4d4d;
+    animation: loseShake 0.6s ease-in-out 1;
+}
+
+@keyframes loseShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* GAME INFO */
+p {
+    margin: 10px 0;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* FORM */
+form {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* INPUT */
+input[type="text"] {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: #0f0f22;
+    color: #00f7ff;
+    box-shadow:
+        inset 0 0 8px rgba(0, 247, 255, 0.4),
+        0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* BUTTONS */
+button {
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #00f7ff, #00c8d7);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 247, 255, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 247, 255, 0.9);
+}
+
+/* MESSAGE */
+.message {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 450px) {
+    .game {
+        width: 90%;
+    }
+}
